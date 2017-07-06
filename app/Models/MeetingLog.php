@@ -18,4 +18,28 @@ class MeetingLog extends Model
       'from',
       'to'
     ];
+
+    /**
+     * From attr accessor.
+     *
+     * @param $value
+     *
+     * @return float
+     */
+    public function getFromAttribute($value)
+    {
+        return floatval($value);
+    }
+
+    /**
+     * To attr accessor.
+     *
+     * @param $value
+     *
+     * @return float
+     */
+    public function getToAttribute($value)
+    {
+        return floatval($value);
+    }
 }

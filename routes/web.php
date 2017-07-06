@@ -28,3 +28,8 @@ Route::post('/add-meeting', [
     'as'   => 'add-meeting',
     'uses' => 'MeetingsLogController@addMeeting',
 ]);
+
+Route::get('/meetings', [
+    'as'   => 'meetings',
+    'uses' => 'MeetingsLogController@getMeetings',
+]);

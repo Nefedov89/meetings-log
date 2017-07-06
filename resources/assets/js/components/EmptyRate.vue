@@ -28,12 +28,6 @@
             emptyDateRate: function() {
                 var scope = this;
 
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-
                 $.get('/get-empty-rate', function (data){
                     scope.rate = data.rate;
                 });
@@ -41,6 +35,12 @@
         },
         mounted: function() {
             let scope = this;
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             scope.emptyDateRate();
         }
